@@ -4,24 +4,13 @@ title: "Min fina titel"
 Min me-sida i kursen oophp
 =========================
 
-Detta innehåll är skrivet i markdown och du hittar innehållet i filen `content/index.md`.
 
-[FIGURE src="image/me.jpg?w=400&a=4,27,11,0&cf&sharpen" class="right" caption="Bild på mig, ätandes glass och hållandes ett kort på någon jultillställning."]
+[FIGURE src="image/me_sandra.jpg?w=300" class="right" caption="Bild på mig"]
 
-Detta är min me-sida i kursen. Denna sidan innehåller en presentation av mig själv. Underhåll denna sidan under hela kursen och uppdatera den efter hand och behov.
+Mitt namn är Sandra, jag kommer från Lund i Skåne. Flyttade till karlskrona för ungefär 4 år sedan för att börja studera Technical Artist. Tyvärr insåg jag lite senare att jag mest var intresserad av programmeringen och inte lika intresserad av grafiken. Hoppade av den utbildningen, men stannade kvar i Karlskona och har jobbat det senaste året.
 
-Så, en presentation en bra början. Skriv några ord om dig själv. Jag börjar.
+Hittade senare att BTH har denna utbildning webbprogrammering och tänkte direkt att det skulle passa mig. Mycket programmering, men inte jättemycket matte! Annars är programmering något som alltid har intresserat mig, då både min syster och pappa är utbildade inom snarlika områden. Alltså blir det en hel del snack om programmering när vi ses!
 
-Mitt namn är Mikael Roos. Född och uppvuxen i Bankeryd, Småland, strax utanför Jönköping, i ett villaområde som byggdes upp samtidigt som vi flyttade in där. Jag gillade landhockey och har spelat bandy och hockey samt gått bowlinggymnasiet i Nässjö. Jag har varit städare, diskare, kallskänka, servitör och kock. På ett bananskal landade jag i Ronneby när jag började högskolan 1990 där och nu är jag kvar med fru, barn och så vidare.
+Annars är mina intressen att spela datorspel, måla och träna. När jag ska koppla av tar jag gärna en fantasy-bok och läser.
 
-Programmering har alltid intresserat mig sedan 13-årsåldern och min första dator var en Spectravideo 328 med bandspelare.
-
-Om jag skall nämna någon hobby, förutom webbprogrammering, så får det bli att bära sten på sommarstugetomten, och det finns sten så det räcker och blir över.
-
-Till och från får jag för mig att börja på lite hobbies, ett år satsade jag på pokerspel, ett annat år var det geocaching, sedan turfing och nu på sistone verkar släktforskning lite spännande. Annars kan jag alltid koda på något av mina opensource-projekt, det finns och blir över.
-
-Vill du läsa mer om vad jag jobbat med så kan du kika på min [Linkedin-profil](https://www.linkedin.com/in/pt90mr/).
-
-Vi syns och hörs i forum och chatt!
-
-/Mikael
+/Sandra
