@@ -4,14 +4,14 @@
  */
 //var_dump(array_keys(get_defined_vars()));
 
-
+namespace Saku\Guess;
 
 /**
  * Init and play guess game.
  */
 $app->router->get("guess/init", function () use ($app) {
     // init session
-    $object = new Saku\Guess\Guess();
+    $object = new Guess();
 
     $_SESSION["number"] = $object->setnumber(rand(1, 100));
     $_SESSION["tries"] = $object->tries();
@@ -76,7 +76,7 @@ $app->router->post("guess/play", function () use ($app) {
     $res = null;
 
     if ($btnGuess) {
-        $game =  new Saku\Guess\Guess($number, $tries);
+        $game =  new Guess($number, $tries);
         $res = $game->makeGuess($guess);
         $_SESSION["tries"] = $game->tries();
         $_SESSION["res"] = $res;
@@ -87,13 +87,13 @@ $app->router->post("guess/play", function () use ($app) {
 
 
     if ($btnCheat) {
-        $game = new Saku\Guess\Guess($number, $tries);
+        $game = new Guess($number, $tries);
         $cheat = $game->cheat();
         $_SESSION["cheat"] = $number;
     }
 
     if ($btnInit) {
-        $game = new Saku\Guess\Guess($number, $tries);
+        $game = new Guess($number, $tries);
         $_SESSION["tries"] = 6;
         $_SESSION["number"] = rand(1, 100);
     }

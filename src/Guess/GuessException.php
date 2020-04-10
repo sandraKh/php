@@ -2,6 +2,8 @@
 
 namespace Saku\Guess;
 
+use Exception;
+
 /**
  * Exception class for GuessException.
  */
