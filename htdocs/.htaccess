@@ -18,7 +18,7 @@ RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
 RewriteRule ^image/(.*)$ /~saku16/dbwebb-kurser/oophp/me/redovisa/htdocs/cimage/img.php?src=$1 [QSA,NC,L]
 
 RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
-RewriteRule (.*) /~mosstud/dbwebb-kurser/oophp/me/redovisa/htdocs/index.php/$1 [NC,L]
+RewriteRule (.*) /~saku16/dbwebb-kurser/oophp/me/redovisa/htdocs/index.php/$1 [NC,L]
 
 
 # Rewrite 2 - For other requests
