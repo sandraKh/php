@@ -26,8 +26,13 @@ namespace Anax\View;
 </form>
 
 <p><?= $number ?></p>
-
-<?php if ($res) : ?>
+<?php
+if ($exception == true) {
+    ?>
+    <p>Numret är inte inom intervallet</p>
+    <?php
+}
+if ($res) : ?>
     <p>Du gissning på <?= $guess ?> är <b><?= $res ?></b></p>
     <?php
     if ($res == "Rätt gissat!") {

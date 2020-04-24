@@ -2,8 +2,9 @@
 
 namespace Saku\Guess;
 
-class Dicehand
+class Dicehand implements HistogramInterface
 {
+    use HistogramTrait;
 
     private $hand;
     private $throw;
@@ -39,5 +40,11 @@ class Dicehand
     {
         $this->throw += array_sum($this->hand);
         return $this->throw;
+    }
+
+    public function roller()
+    {
+        $this->hand = $this->hand->throw();
+        return $this->serie;
     }
 }

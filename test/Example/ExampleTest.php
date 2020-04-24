@@ -14,11 +14,11 @@ class DiceTest extends TestCase
     /**
      * Just assert something is true.
      */
-    public function testInstance()
-    {
-        $newDice = new Dice();
-        $this->assertInstanceOf("\Saku\Dice\Dice", $newDice);
-    }
+    // public function testInstance()
+    // {
+    //     $newDice = new Dice();
+    //     $this->assertInstanceOf("\Saku\Guess\Dice", $newDice);
+    // }
     public function testobject()
     {
         $newDice = new Dice();
@@ -42,7 +42,7 @@ class DiceTest extends TestCase
     public function testInstanceHand()
     {
         $newDice = new DiceHand();
-        $this->assertInstanceOf("\Saku\Dice\DiceHand", $newDice);
+        $this->assertInstanceOf("\Saku\Guess\DiceHand", $newDice);
     }
 
     public function testRoll()
@@ -87,5 +87,41 @@ class DiceTest extends TestCase
         $newDice2->roll();
         $totalsum += $newDice2->totalsum();
         $this->assertLessThan($totalsum, $sum);
+    }
+
+    public function testrollHist()
+    {
+        // $newDice = new DiceHand();
+        // $newDice->roll();
+        $newDice = new DiceHistogram2();
+        $handd = $newDice->roll();
+        $this->assertisArray($handd);
+
+        $throw = $newDice->ifOne();
+        $this->assertIsBool($throw);
+        $found = false;
+        foreach ($handd as $value) {
+            if ($value == 1) {
+                $found = true;
+                $this->assertEquals(true, $throw);
+            } else {
+            // $this->assertEquals($throw, false);
+            }
+        }
+        $this->assertisInt($newDice->sum());
+        $this->assertisInt($newDice->totalsum());
+    }
+
+    public function testHistogram()
+    {
+        $class = new \Saku\Guess\DiceHistogram2();
+        $class->roll();
+        $histogram = new Histogram();
+        $histogram->injectData($class);
+        $this->assertIsObject($histogram);
+        $this->assertIsArray($histogram->getSerie());
+
+
+        $this->assertIsArray($histogram->getAsText());
     }
 }

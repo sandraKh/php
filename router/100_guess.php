@@ -15,6 +15,8 @@ $app->router->get("guess/init", function () use ($app) {
 
     $_SESSION["number"] = $object->setnumber(rand(1, 100));
     $_SESSION["tries"] = $object->tries();
+    $_SESSION["exception"] = false;
+
 
     return $app->response->redirect("guess/play");
 });
@@ -32,6 +34,7 @@ $app->router->get("guess/play", function () use ($app) {
     $res = $_SESSION["res"] ?? null;
     $guess = $_SESSION["guess"] ?? null;
     $cheat = $_SESSION["cheat"] ?? null;
+    $exception = $_SESSION["exception"] ?? null;
 
     $_SESSION["res"] = null;
     $_SESSION["guess"] = null;
@@ -44,7 +47,8 @@ $app->router->get("guess/play", function () use ($app) {
         "number" => $number ?? null,
         "btnGuess" => $btnGuess ?? null,
         "btnCheat" => $btnCheat ?? null,
-        "cheat" => $cheat
+        "cheat" => $cheat,
+        "exception" => $exception
     ];
 
     $app->page->add("guess/play", $data);
@@ -65,8 +69,7 @@ $app->router->post("guess/play", function () use ($app) {
     $number = $_SESSION["number"] ?? null;
     $tries = $_SESSION["tries"] ?? null;
     $cheat = $_SESSION["cheat"] ?? null;
-
-
+    $exception = $_SESSION["exception"] ?? null;
 
     $guess = $_POST["guess"] ?? null;
     $btnInit = $_POST["btnInit"] ?? null;
@@ -77,7 +80,13 @@ $app->router->post("guess/play", function () use ($app) {
 
     if ($btnGuess) {
         $game =  new Guess($number, $tries);
-        $res = $game->makeGuess($guess);
+        try {
+            $_SESSION["exception"] = false;
+            $res = $game->makeGuess($guess);
+        } catch (GuessException $e) {
+            $_SESSION["exception"] = true;
+        }
+
         $_SESSION["tries"] = $game->tries();
         $_SESSION["res"] = $res;
         $_SESSION["guess"] = $guess;
